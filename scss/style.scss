@@ -1,0 +1,402 @@
+* {
+	box-sizing: border-box;
+}
+
+@mixin font1 {
+	font-family: Montserrat;
+	font-style: normal;
+}
+
+@mixin font2 {
+	font-family: Poppins;
+	font-style: normal;
+}
+
+@mixin btn($font_size, $line_height, $border_radius, $padding, $background, $width, $height) {
+	color: #FFF;
+	@include font1;
+	font-weight: bold;
+	font-size: $font-size;
+	line-height: $line-height;
+	border-radius: $border-radius;
+	padding: $padding;
+	background: $background;
+	width: $width;
+	height: $height;
+}
+
+@mixin page($url) {
+	display: flex;
+	flex-direction: row;
+	width: 1440px;
+	height: 656px;
+	padding-top: 78px;
+	padding-left: 245px;
+
+	.page-img {
+		width: 40%;
+		height: 656px;
+		background-image: url($url);
+		background-size: 110%;
+		background-repeat: no-repeat;
+
+	}
+	.page-text {
+		display: flex;
+		flex-direction: column;
+		padding-top: 203px;
+
+		h3 {
+			@include font1;
+			font-weight: bold;
+			font-size: 24px;
+			line-height: 36px;
+			color: #FA4A0C;
+			letter-spacing: 0.1px;
+		}	
+
+		h2 {
+			margin: 0px;
+			@include font1;
+			font-weight: bold;
+			font-size: 40px;
+			line-height: 57px;
+			letter-spacing: 0.2px;
+			color: #252848;
+		}	
+
+		h4 {
+			@include font1;
+			font-weight: 500;
+			font-size: 24px;
+			line-height: 38px;
+			color: #737373;
+			letter-spacing: 0.2px;
+		}
+	}
+}
+
+body {
+	background: #FFF;
+	.header {
+		position: absolute;
+		width: 1440px;
+		.navbar {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-end;
+			width: 1440px;
+			height: 156px;
+			.left {
+				width: 256px;
+				height: 101.76px;
+				position: absolute;
+				left: 8.13%;
+			}
+
+			.right {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				.menu {
+					display: grid;
+					grid-template-columns: auto auto auto auto;
+					list-style-type: none;
+					height: 48px;
+					width: 580px;
+					padding: 10px;
+					a {
+						text-decoration: none;
+						@include font1;
+						font-weight: 600;
+						font-size: 16px;
+						line-height: 28px;
+						color: #000;
+					}
+				}
+			}
+		}
+
+		.hero-light {
+			width: 1440px;
+			height: 619px;
+			background-image: url("../images/Rectangle 48.png");
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+
+			.text-content {
+				color: #FFF;
+
+				p {
+					@include font1;
+					font-weight: bold;
+					font-size: 24px;
+					line-height: 36px;
+				}
+
+				h1 {
+					@include font2;
+					font-weight: bold;
+					font-size: 58px;
+					line-height: 80px;
+				}
+
+				h4 {
+					@include font1;
+					font-weight: 500;
+					font-size: 24px;
+					line-height: 38px;
+				}
+
+			}
+
+			.btn {
+
+				.playstore-btn {
+					@include btn(24px, 36px, 30px, 16px 0px, #FA4A0C, 236px, 68px);
+				}
+
+				.appstore-btn {
+					@include btn(24px, 36px, 30px, 16px 0px, rgba(0,0,0,0), 236px, 68px);
+					border: solid 1px;
+				}
+			}
+		}
+	}
+
+	.img-left {
+		position: absolute;
+		width: 598px;
+		height: 1172px;
+		left: 305px;
+		top: 460px;
+		background-image: url("../images/Rectanglered.png");
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
+
+	.img-right {
+		position: absolute;
+		left: 669px;
+		top: 709px;
+		width: 285px;
+		height: 531px;
+		background-image: url("../images/Rectangle (1).png");
+	}
+
+	.main {
+		position: relative;
+		top: 1378.91px;
+		width: 1440px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		.horizontal-line {
+			width: 884px;
+			height: 0px;
+			border: 1px solid #E4E4E4;
+			background-color: #E4E4E4;
+		}
+
+		.text-how {
+			position: absolute;
+			top: 72.09px;
+			width: 425px;
+			height: 36px;
+			@include font2;
+			font-weight: 600;
+			font-size: 44px;
+			line-height: 36px;
+			color: #000;
+			opacity: 0.8;
+		}	
+
+		.page-1 {
+			@include page("../images/Rectanglewhite-phone-1.png");
+		}
+
+		.page-2 {
+			@include page("../images/Rectanglewhite-phone-2.png");
+			.page-img {
+				margin-left: 100px;
+			}
+		}
+
+		.page-3 {
+			@include page("../images/Rectanglewhite-phone-3.png");
+			margin-bottom: 100px;
+		}
+
+		.page-4 {
+			height: 516px;
+			width: 1400px;
+			background-image: url("../images/Rectangle 47.png");
+			background-repeat: no-repeat;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			padding-top: 145px;
+
+			.text-content {
+				color: #FFF;
+
+				h2 {
+					@include font1;
+					font-weight: bold;
+					font-size: 40px;
+					line-height: 57px;
+					margin: 0px 10px;
+				}
+
+				h4 {
+					@include font1;
+					font-weight: 500;
+					font-size: 24px;
+					line-height: 38px;
+					margin: 20px 0px 78px 0px;
+				}	
+
+			}
+
+			.btn {
+				.playstore-btn {
+					@include btn(16px, 28px, 10px, 18px 31px, #FA4A0C, 142px, 64px);
+					border: none;
+
+				}
+
+				.appstore-btn {
+					@include btn(16px, 28px, 10px, 18px 31px, rgba(0,0,0,0), 173px, 62px);
+					border: solid 1px #FFF;
+					margin-left: 15px;
+				}
+			}
+		}
+
+		.form{
+			form {
+				height: 1080px;
+				width: 1400px;
+				background: rgba(231, 238, 245, 0.25);
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+				padding: 86px 177px 0px 174px;
+
+				.caption {
+					@include font1;
+					font-weight: bold;
+					font-size: 36px;
+					line-height: 44px;
+				}
+
+				label {
+					@include font1;
+					font-weight: 600;
+					font-size: 24px;
+					line-height: 32px;
+					letter-spacing: 0.05em;
+					text-align: left;
+				}
+
+				p {
+					width: 1138px;
+					height: 66px;
+					text-align: left;
+					font-weight: 500;
+					font-size: 16px;
+					line-height: 22px;
+					letter-spacing: 0.02em;
+				}
+
+				.info {
+					display: grid;
+					grid-template-columns: auto auto;
+					grid-column-gap: 48px;
+					text-align: left;
+
+					span {
+						color: #EB8205;
+					}
+
+					input {
+						width: 100%;
+						height: 71px;
+						margin-top: 12px;
+						margin-bottom: 15px;
+						box-shadow: 0px 0px 50px rgba(178, 173, 255, 0.17);
+						border-radius: 5px;
+						border: none;
+						font-size: 30px;
+						color: #737373;
+					}
+
+					.error {
+						color: red;
+						width: 100%;
+					}
+				}
+
+				.check {
+					margin-top: 28px;
+					margin-left: 42px;
+					height: 24px;
+					text-align: left;
+					display: flex;
+					flex-direction: row;
+					input {
+						width: 18px;
+						height: 18px;
+					}
+
+					div {
+						@include font1;
+						font-weight: 500;
+						font-size: 16px;
+						line-height: 22px;
+						letter-spacing: 0.02em;
+						padding-top: 3px;
+						padding-left: 20px;
+					}
+					
+				}
+
+				.btn {
+					margin-top: 81px;
+					button {
+						@include btn(16px, 22px, 5px, 0px, #FA4A0C, 192.85px, 54px);
+						color: #FFF;
+						border: none;
+					}
+				}
+			}
+		}
+
+	}
+	
+	.footer {
+		position: relative;
+		top: 1250px;
+		padding: 0px 115px 38px 115px;
+
+		.content-footer {
+			justify-content: space-between;
+			display: flex;
+			flex-direction: row;
+			width: 1210px;
+			height: 113px;
+			padding: 0px 45px 0px 71px;
+			align-items: center;
+
+			.center-footer {
+				justify-content: space-between;
+				display: flex;
+				flex-direction: row;
+				width: 171px;
+			}
+		}
+	}
+	
+}
